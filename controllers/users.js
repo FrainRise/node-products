@@ -1,6 +1,6 @@
 const { v4: uuidv4 } = require("uuid");
 const fs = require("fs");
-const { verifyUniqueEmail } = require("../utils/verifyUserRoute");
+const { verifyUniqueEmail } = require("../utils/verifyUsersRoute");
 const { findEntityById } = require("../utils/findEntityById");
 
 const USERS_FILE_ROUTE = `${__dirname}/../data/users.json`;
@@ -24,8 +24,8 @@ const createUser = (req, res) => {
   verifyUniqueEmail(res, req.body.email, users);
 
   const newUser = {
-    id: uuidv4(),
     ...req.body,
+    id: uuidv4()
   };
 
   users.push(newUser);
@@ -51,9 +51,9 @@ const updateUser = (req, res) => {
   if (!currentUser) return;
 
   const newData = {
-    id: currentUser.id,
     ...currentUser,
-    ...req.body
+    ...req.body,
+    id: currentUser.id,
   }
 
   const updatedUsers = users.map(user => 

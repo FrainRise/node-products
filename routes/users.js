@@ -1,6 +1,6 @@
 const express = require('express');
 const {getAllUsers, createUser, getUser, updateUser, deleteUser} = require('../controllers/users')
-const {verifyBodyReq} = require('../utils/verifyUserRoute')
+const {verifyBodyReq} = require('../utils/verifyUsersRoute')
 const API_ROUTES = {
     USERS: '/',
     USERS_BY_ID: '/:id'
