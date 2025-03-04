@@ -1,17 +1,16 @@
 const express = require('express');
 const {getAllProducts, createProduct, getProduct, updateProduct, deleteProduct} = require('../controllers/products')
 const {verifyBodyReq} = require('../utils/verifyProductsRoute')
-const API_ROUTES = {
-    PRODUCTS: '/',
-    PRODUCTS_BY_ID: '/:id'
-};
+const authMiddleware = require('../middlewares/auth');
 
 const router = express.Router();
 
-router.route(API_ROUTES.PRODUCTS)
+router.use(authMiddleware);
+
+router.route('/')
     .get(getAllProducts)
     .post(verifyBodyReq, createProduct);
-router.route(API_ROUTES.PRODUCTS_BY_ID)
+router.route('/:id')
     .get(getProduct)
     .patch(updateProduct)
     .delete(deleteProduct);

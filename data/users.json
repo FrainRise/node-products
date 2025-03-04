@@ -1,1 +1,8 @@
-[{"id":"398148d2-3536-41ec-b346-1536989cc606","name":"Test Test","position":"Jun dev","email":"test1@gmail.com"},{"id":"93089f5f-7e7e-4a6c-9d48-a317377d2954","name":"Test Test","position":"Jun dev","email":"test1@gmail.com","level":5},{"id":"526e3c8d-a44e-46c4-9fb3-845f3fd4f5d9","name":"Test Test","position":"Jun dev","email":"test55@gmail.com","level":5}]
+[
+  {
+    "id": "ff2763f6-4e20-47d2-973f-29df61075b60",
+    "username": "test",
+    "email": "test@gmai.com",
+    "password": "$2b$10$0qzkCqct3WVlkH9iAFQIG.2sulHlvHDKBLYYEgMsVrOavhMocCn52"
+  }
+]
